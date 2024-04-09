@@ -1,0 +1,173 @@
+﻿@model WebShop.Models.Product
+
+@{
+    ViewData["Title"] = "Model.Title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Product> lsProducts = ViewBag.SanPham;
+}
+
+
+<!-- Shop Details Section Begin -->
+<section class="shop-details">
+    <div class="product__details__pic">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="product__details__breadcrumb">
+                        <a href="./index.html">Home</a>
+                        <a href="./shop.html">Shop</a>
+                        <span>Product Details</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a href="~/images/products/@Model.Thumb" class="single-img gallery-popup">
+                                <img class="img-full" src="~/images/products/@Model.Thumb" alt="@Model.Title">
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">
+                                <img class="img-full" src="~/images/products/@Model.Thumb" alt="@Model.Title">
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
+                                <img class="img-full" src="~/images/products/@Model.Thumb" alt="@Model.Title">
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab">
+                                <img class="img-full" src="~/images/products/@Model.Thumb" alt="@Model.Title">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 col-md-9">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                            <div class="product__details__pic__item">
+                                <img class="img-full" src="~/images/products/@Model.Thumb" alt="@Model.Title">
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tabs-2" role="tabpanel">
+                            <div class="product__details__pic__item">
+                                <img class="img-full" src="~/images/products/@Model.Thumb" alt="@Model.Title">
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tabs-3" role="tabpanel">
+                            <div class="product__details__pic__item">
+                                <img class="img-full" src="~/images/products/@Model.Thumb" alt="@Model.Title">
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tabs-4" role="tabpanel">
+                            <div class="product__details__pic__item">
+                                <img class="img-full" src="~/images/products/@Model.Thumb" alt="@Model.Title">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="product__details__content">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-8">
+                    <div class="product__details__text">
+                        <h4>@Model.ProductName</h4>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                            <span> - 5 Reviews</span>
+                        </div>
+                        <h4><span>@Model.Price.Value.ToString("#,##0") VNĐ</span></h4>
+                        <p>
+                            @Model.Description
+                        </p>
+                        <div class="product__details__option">
+                         
+                        </div>
+                        <div class="product__details__cart__option">
+                            <div class="quantity mb-3">
+                                <div class="pro-qty">
+                                    <input id="txtsoluong" name="txtsoluong" type="text" value="1">
+                                </div>
+                            </div>
+                            <div class="add-to-cart mt-3">
+                                <a href="javascript:void(0)" class="primary-btn">Thêm vào giỏ hàng</a>
+                                <input hidden asp-for="ProductId" />
+                            </div>
+                        </div>
+                        <div class="product__details__btns__option">
+                   
+                        </div>
+                        <div class="product__details__last__option">
+                            <h5><span>Đảm bảo thanh toán an toàn  </span></h5>
+                            <img src="img/shop-details/details-payment.png" alt="">
+                            <ul>
+                                <li><span>Categories:</span> @Model.Cat.CatName</li>
+                                <li><span>Tag:</span> @Model.Tags</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="product__details__tab">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#tabs-5"
+                                   role="tab">Mô tả</a>
+                                <h4>@Model.Description</h4>
+                            </li>
+                                               
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+</section>
+<!-- Shop Details Section End -->
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $(function () {
+                $(".add-to-cart").click(function () {
+                    var productid = $('#ProductId').val();
+                    var soluong = $('#txtsoluong').val();
+                    $.ajax({
+                        url: '/api/cart/add',
+                        type: "POST",
+                        dataType: "JSON",
+                        data: {
+                            productID: productid,
+                            amount: soluong
+                        },
+                        success: function (response) {
+                            loadHeaderCart();
+                            location.reload();
+                        },
+                        error: function (error) {
+                            alert("There was an error posting the data to the server" + error.responseText);
+                        }
+                    });
+                });
+            });
+        });
+
+        function loadHeaderCart() {
+            $("#miniCart").load("/AjaxContent/HeaderCart");
+            $("#numberCart").load("/AjaxContent/NumberCart");
+        }
+
+    </script>
+}
