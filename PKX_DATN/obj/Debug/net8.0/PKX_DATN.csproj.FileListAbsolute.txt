@@ -556,6 +556,7 @@ D:\Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024\PKXStore\PKX_DATN\PKX_DATN\ob
 D:\Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024\PKXStore\PKX_DATN\PKX_DATN\obj\Debug\net8.0\PKX_DATN.pdb
 D:\Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024\PKXStore\PKX_DATN\PKX_DATN\obj\Debug\net8.0\PKX_DATN.genruntimeconfig.cache
 D:\Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024\PKXStore\PKX_DATN\PKX_DATN\obj\Debug\net8.0\ref\PKX_DATN.dll
+<<<<<<< HEAD
 D:\asp.net\PhuKienXe\pkxstore\PKX_DATN\bin\Debug\net8.0\appsettings.Development.json
 D:\asp.net\PhuKienXe\pkxstore\PKX_DATN\bin\Debug\net8.0\appsettings.json
 D:\asp.net\PhuKienXe\pkxstore\PKX_DATN\bin\Debug\net8.0\PKX_DATN.staticwebassets.runtime.json
@@ -1115,3 +1116,6 @@ D:\asp.net\PhuKienXe\pkxstore\PKX_DATN\obj\Debug\net8.0\refint\PKX_DATN.dll
 D:\asp.net\PhuKienXe\pkxstore\PKX_DATN\obj\Debug\net8.0\PKX_DATN.pdb
 D:\asp.net\PhuKienXe\pkxstore\PKX_DATN\obj\Debug\net8.0\PKX_DATN.genruntimeconfig.cache
 D:\asp.net\PhuKienXe\pkxstore\PKX_DATN\obj\Debug\net8.0\ref\PKX_DATN.dll
+=======
+D:\Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024\PKXStore\PKX_DATN\PKX_DATN\obj\Debug\net8.0\PKX_DATN.sourcelink.json
+>>>>>>> 28ed8c321c82291cad41d2713a18b108cc749bf4

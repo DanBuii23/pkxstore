@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PKX_DATN.ModelViews
 {
-    public class RegisterVM
+    public class DangKy
     {
         [Key]
         public int CustomerId { get; set; }
