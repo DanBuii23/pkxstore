@@ -3,6 +3,8 @@ using AspNetCoreHero.ToastNotification.Extensions;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using PKX_DATN.Models;
+using System.Text.Encodings.Web;
+using System.Text.Unicode;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +15,8 @@ builder.Services.AddNotyf(config => { config.DurationInSeconds = 10; config.IsDi
 builder.Services.AddDbContext<WebPkxContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DbContext")));
 
+builder.Services.AddSingleton(HtmlEncoder.Create(allowedRanges: new[] { UnicodeRanges.All }));
+builder.Services.AddSession();
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
@@ -41,6 +45,7 @@ app.UseRouting();
 
 app.UseAuthorization();
 app.UseAuthentication();
+app.UseSession();
 
 app.MapDefaultControllerRoute();
 app.UseNotyf();
