@@ -17,71 +17,71 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PKX_DATN
 build_property.RootNamespace = PKX_DATN
-build_property.ProjectDir = D:\Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024\PKXStore\PKX_DATN\PKX_DATN\
+build_property.ProjectDir = D:\asp.net\PhuKienXe\pkxstore\PKX_DATN\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = D:\Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024\PKXStore\PKX_DATN\PKX_DATN
+build_property.MSBuildProjectDirectory = D:\asp.net\PhuKienXe\pkxstore\PKX_DATN
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024/PKXStore/PKX_DATN/PKX_DATN/Views/Home/About.cshtml]
+[D:/asp.net/PhuKienXe/pkxstore/PKX_DATN/Views/Home/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024/PKXStore/PKX_DATN/PKX_DATN/Views/Home/Contact.cshtml]
+[D:/asp.net/PhuKienXe/pkxstore/PKX_DATN/Views/Home/Contact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024/PKXStore/PKX_DATN/PKX_DATN/Views/Home/DanhMuc.cshtml]
+[D:/asp.net/PhuKienXe/pkxstore/PKX_DATN/Views/Home/DanhMuc.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEYW5oTXVjLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024/PKXStore/PKX_DATN/PKX_DATN/Views/Home/Index.cshtml]
+[D:/asp.net/PhuKienXe/pkxstore/PKX_DATN/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024/PKXStore/PKX_DATN/PKX_DATN/Views/Home/ListProduct.cshtml]
+[D:/asp.net/PhuKienXe/pkxstore/PKX_DATN/Views/Home/ListProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMaXN0UHJvZHVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024/PKXStore/PKX_DATN/PKX_DATN/Views/Home/Privacy.cshtml]
+[D:/asp.net/PhuKienXe/pkxstore/PKX_DATN/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024/PKXStore/PKX_DATN/PKX_DATN/Views/Shared/Components/HeaderCart/Default.cshtml]
+[D:/asp.net/PhuKienXe/pkxstore/PKX_DATN/Views/Shared/Components/HeaderCart/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcSGVhZGVyQ2FydFxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024/PKXStore/PKX_DATN/PKX_DATN/Views/Shared/Components/NumberCart/Default.cshtml]
+[D:/asp.net/PhuKienXe/pkxstore/PKX_DATN/Views/Shared/Components/NumberCart/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTnVtYmVyQ2FydFxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024/PKXStore/PKX_DATN/PKX_DATN/Views/Shared/Error.cshtml]
+[D:/asp.net/PhuKienXe/pkxstore/PKX_DATN/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024/PKXStore/PKX_DATN/PKX_DATN/Views/Shared/_FooterPartialView.cshtml]
+[D:/asp.net/PhuKienXe/pkxstore/PKX_DATN/Views/Shared/_FooterPartialView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Gb290ZXJQYXJ0aWFsVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024/PKXStore/PKX_DATN/PKX_DATN/Views/Shared/_HeaderPartialView.cshtml]
+[D:/asp.net/PhuKienXe/pkxstore/PKX_DATN/Views/Shared/_HeaderPartialView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9IZWFkZXJQYXJ0aWFsVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024/PKXStore/PKX_DATN/PKX_DATN/Views/Shared/_Layout.cshtml]
+[D:/asp.net/PhuKienXe/pkxstore/PKX_DATN/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024/PKXStore/PKX_DATN/PKX_DATN/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/asp.net/PhuKienXe/pkxstore/PKX_DATN/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024/PKXStore/PKX_DATN/PKX_DATN/Views/_ViewImports.cshtml]
+[D:/asp.net/PhuKienXe/pkxstore/PKX_DATN/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024/PKXStore/PKX_DATN/PKX_DATN/Views/_ViewStart.cshtml]
+[D:/asp.net/PhuKienXe/pkxstore/PKX_DATN/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

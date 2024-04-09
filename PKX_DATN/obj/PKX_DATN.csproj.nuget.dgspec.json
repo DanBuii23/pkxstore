@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024\\PKXStore\\PKX_DATN\\PKX_DATN\\PKX_DATN.csproj": {}
+    "D:\\asp.net\\PhuKienXe\\pkxstore\\PKX_DATN\\PKX_DATN.csproj": {}
   },
   "projects": {
-    "D:\\Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024\\PKXStore\\PKX_DATN\\PKX_DATN\\PKX_DATN.csproj": {
+    "D:\\asp.net\\PhuKienXe\\pkxstore\\PKX_DATN\\PKX_DATN.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024\\PKXStore\\PKX_DATN\\PKX_DATN\\PKX_DATN.csproj",
+        "projectUniqueName": "D:\\asp.net\\PhuKienXe\\pkxstore\\PKX_DATN\\PKX_DATN.csproj",
         "projectName": "PKX_DATN",
-        "projectPath": "D:\\Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024\\PKXStore\\PKX_DATN\\PKX_DATN\\PKX_DATN.csproj",
-        "packagesPath": "C:\\Users\\danbu\\.nuget\\packages\\",
-        "outputPath": "D:\\Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024\\PKXStore\\PKX_DATN\\PKX_DATN\\obj\\",
+        "projectPath": "D:\\asp.net\\PhuKienXe\\pkxstore\\PKX_DATN\\PKX_DATN.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "D:\\asp.net\\PhuKienXe\\pkxstore\\PKX_DATN\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\danbu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

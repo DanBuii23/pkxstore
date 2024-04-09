@@ -12,10 +12,9 @@ namespace PKX_DATN.Controllers.Components
     {
         public IViewComponentResult Invoke()
         {
-/*            var cart = HttpContext.Session.Get<List<SanPhamGioHang>>("GioHang");
+            var cart = HttpContext.Session.Get<List<SanPhamGioHang>>("GioHang");
 
-            return View(cart);*/
-return View();
+            return View(cart);
         }
     }
 }
