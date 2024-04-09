@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebShop.ModelViews
+namespace PKX_DATN.ModelViews
 {
     public class RegisterVM
     {
