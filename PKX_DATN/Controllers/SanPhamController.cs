@@ -7,44 +7,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-using WebShop.Models;
+using PKX_DATN.Models;
 
-namespace WebShop.Controllers
+namespace PKX_DATN.Controllers
 {
-    public class ProductController : Controller
+    public class SanPhamController : Controller
     {
-        private readonly webshopContext _context;
+        private readonly WebPkxContext _context;
 
-        public ProductController(webshopContext context)
+        public SanPhamController(WebPkxContext context)
         {
             _context = context;
         }
         [Route("shop.html", Name = "ShopProduct")]
-        //public IActionResult Index(int? page)
-        //{
-        //    try
-        //    {
-        //        var pageNumber = page == null || page <= 0 ? 1 : page.Value;
-        //        var pageSize = 6;
-        //        var lsProduct = _context.Products.AsNoTracking()
-
-        //            .OrderByDescending(x => x.DateCreated);
-        //        PagedList<Product> models = new PagedList<Product>(lsProduct, pageNumber, pageSize);
-        //        ViewBag.CurrentPage = pageNumber;
-        //        ViewBag.SanPham = lsProduct;
-
-
-
-        //        return View(models);
-        //    }
-        //    catch
-        //    {
-        //        return RedirectToAction("Index", "Home");
-        //    }
-
-
-        //}
-
         public async Task<IActionResult> Index(string currentFilter, string searchString, int? pageNumber)
         {
 
@@ -58,15 +33,15 @@ namespace WebShop.Controllers
                 searchString = currentFilter;
             }
 
-            var p = from s in _context.Products
+            var p = from s in _context.TblSanPhams
                     select s;
             if (!String.IsNullOrEmpty(searchString))
             {
-                p = p.Where(s => s.ProductName.Contains(searchString)
-                                       || s.Price.ToString().Contains(searchString));
+                p = p.Where(s => s.STenSanPham.Contains(searchString)
+                                       || s.FGiaTien.ToString().Contains(searchString));
             }
             int pageSize = 6;
-            return View(await PaginatedList<Product>.CreateAsync(p.AsNoTracking(), pageNumber ?? 1, pageSize));
+            return View(await PaginatedList<TblSanPham>.CreateAsync(p.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 
 
@@ -76,13 +51,13 @@ namespace WebShop.Controllers
             try
             {
                 var pageSize = 20;
-                var danhmuc = _context.Categories.AsNoTracking().SingleOrDefault(x => x.CatId == CatID);
+                var danhmuc = _context.TblDanhMucs.AsNoTracking().SingleOrDefault(x => x.IdDanhMuc == CatID);
                 if (danhmuc != null)
                 {
-                    var lsTinTuc = _context.Products.AsNoTracking()
-                  .Where(x => x.CatId == danhmuc.CatId)
-                  .OrderByDescending(x => x.DateCreated);
-                    PagedList<Product> models = new PagedList<Product>(lsTinTuc, page, pageSize);
+                    var ls = _context.TblSanPhams.AsNoTracking()
+                  .Where(x => x.IdDanhMuc == danhmuc.IdDanhMuc)
+                  .OrderByDescending(x => x.DNgayTao);
+                    PagedList<TblSanPham> models = new PagedList<TblSanPham>(ls, page, pageSize);
                     ViewBag.CurrentPage = page;
                     ViewBag.CurrentCat = danhmuc;
                     return View(models);
@@ -100,21 +75,21 @@ namespace WebShop.Controllers
         }
 
 
-        [Route("/{Alias}-{id}.html", Name = "ProductDetails")]
+        [Route("/{id}.html", Name = "ProductDetails")]
         public IActionResult Details(int id)
         {
             try
             {
-                var product = _context.Products.Include(x => x.Cat).FirstOrDefault(x => x.ProductId == id);
+                var product = _context.TblSanPhams.Include(x => x.IdDanhMuc).FirstOrDefault(x => x.IdSanPham == id);
                 if (product == null)
                 {
                     return RedirectToAction("Index");
                 }
 
-                var lsProduct = _context.Products
+                var lsProduct = _context.TblSanPhams
                     .AsNoTracking()
-                    .Where(x => x.CatId == product.CatId && x.ProductId != id && x.Active == true)
-                    .OrderByDescending(x => x.DateCreated)
+                    .Where(x => x.IdDanhMuc == product.IdDanhMuc && x.IdSanPham != id && x.BTrangThai == true)
+                    .OrderByDescending(x => x.DNgayTao)
                     .Take(4)
                     .ToList();
                 ViewBag.SanPham = lsProduct;

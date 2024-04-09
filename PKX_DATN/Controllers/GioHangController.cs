@@ -6,32 +6,33 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebShop.Extension;
-using WebShop.Models;
-using WebShop.ModelViews;
+using PKX_DATN.Extension;
+using PKX_DATN.Models;
+using PKX_DATN.ModelViews;
+using Microsoft.AspNetCore.Http;
 
-namespace WebShop.Controllers
+namespace PKX_DATN.Controllers
 {
-    public class ShoppingCartController : Controller
+    public class GioHangController : Controller
     {
-        private readonly webshopContext _context;
+        private readonly WebPkxContext _context;
         public INotyfService _notyfService { get; }
 
 
-        public ShoppingCartController(webshopContext context, INotyfService notyfService)
+        public GioHangController(WebPkxContext context, INotyfService notyfService)
         {
             _context = context;
             _notyfService = notyfService;
         }
 
-        public List<CartItem> GioHang
+        public List<SanPhamGioHang> GioHang
         {
             get
             {
-                var gh = HttpContext.Session.Get<List<CartItem>>("GioHang");
-                if (gh == default(List<CartItem>))
+                var gh = HttpContext.Session.Get<List<SanPhamGioHang>>("GioHang");
+                if (gh == default(List<SanPhamGioHang>))
                 {
-                    gh = new List<CartItem>();
+                    gh = new List<SanPhamGioHang>();
                 }
                 return gh;
             }
@@ -39,13 +40,13 @@ namespace WebShop.Controllers
 
         [HttpPost]
         [Route("api/cart/add")]
-        public IActionResult AddToCart(int productID, int? amount)
+        public IActionResult AddToCart(int IdSanPham, int? amount)
         {
-            List<CartItem> gioHang = GioHang;
+            List<SanPhamGioHang> gioHang = GioHang;
             try
             {
                 //them sp vao gio hang
-                CartItem item = GioHang.SingleOrDefault(p => p.product.ProductId == productID);
+                SanPhamGioHang item = GioHang.SingleOrDefault(p => p.SanPham.IdSanPham == IdSanPham);
                 if (item != null)//da co --> capnhat so luong
                 {
                     if (amount.HasValue)
@@ -60,16 +61,16 @@ namespace WebShop.Controllers
                 }
                 else
                 {
-                    Product hh = _context.Products.SingleOrDefault(p => p.ProductId == productID);
-                    item = new CartItem
+                    TblSanPham hh = _context.TblSanPhams.SingleOrDefault(p => p.IdSanPham == IdSanPham);
+                    item = new SanPhamGioHang
                     {
                         amount = amount.HasValue ? amount.Value : 1,
-                        product = hh
+                        SanPham = hh
                     };
                     gioHang.Add(item);//them vao gio
                 }
                 //luu lai Session
-                HttpContext.Session.Set<List<CartItem>>("GioHang", gioHang);
+                HttpContext.Session.Set<List<SanPhamGioHang>>("GioHang", gioHang);
                 _notyfService.Success("Thêm sản phẩm thành công");
                 return Json(new { success = true });
             }
@@ -81,24 +82,24 @@ namespace WebShop.Controllers
 
         [HttpPost]
         [Route("api/cart/update")]
-        public IActionResult UpdateCart(int productId, int? amount)
+        public IActionResult UpdateCart(int IdSanPham, int? amount)
         {
-            var cart = HttpContext.Session.Get<List<CartItem>>("GioHang") ?? new List<CartItem>();
+            var gioHang = HttpContext.Session.Get<List<SanPhamGioHang>>("GioHang") ?? new List<SanPhamGioHang>();
 
-            var itemToUpdate = cart.SingleOrDefault(item => item.product.ProductId == productId);
+            var itemToUpdate = gioHang.SingleOrDefault(item => item.SanPham.IdSanPham == IdSanPham);
             if (itemToUpdate != null)
             {
                 if (itemToUpdate != null && amount.HasValue)
                 {
                     if (amount == 0)
                     {
-                        cart.Remove(itemToUpdate);
+                        gioHang.Remove(itemToUpdate);
                     }
                     itemToUpdate.amount = amount.Value;
                 }
             }
 
-            HttpContext.Session.Set<List<CartItem>>("GioHang", cart);
+            HttpContext.Session.Set<List<SanPhamGioHang>>("GioHang", gioHang);
 
             return Json(new { success = true });
         }
@@ -106,19 +107,19 @@ namespace WebShop.Controllers
 
         [HttpPost]
         [Route("api/cart/remove")]
-        public ActionResult Remove(int productID)
+        public ActionResult Remove(int IdSanPham)
         {
             try
             {
-                var cart = HttpContext.Session.Get<List<CartItem>>("GioHang") ?? new List<CartItem>();
+                var gioHang = HttpContext.Session.Get<List<SanPhamGioHang>>("GioHang") ?? new List<SanPhamGioHang>();
 
-                var itemToUpdate = cart.SingleOrDefault(item => item.product.ProductId == productID);
+                var itemToUpdate = gioHang.SingleOrDefault(item => item.SanPham.IdSanPham == IdSanPham);
                 if (itemToUpdate != null)
                 {
-                    cart.Remove(itemToUpdate);
+                    gioHang.Remove(itemToUpdate);
                 }
                 // luu lai session
-                HttpContext.Session.Set<List<CartItem>>("GioHang", cart);
+                HttpContext.Session.Set<List<SanPhamGioHang>>("GioHang", gioHang);
                 return Json(new { success = true });
             }
             catch

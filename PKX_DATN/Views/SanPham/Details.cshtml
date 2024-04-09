@@ -1,9 +1,9 @@
-﻿@model WebShop.Models.Product
+﻿@model PKX_DATN.Models.TblSanPham
 
 @{
     ViewData["Title"] = "Model.Title";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    List<Product> lsProducts = ViewBag.SanPham;
+    List<TblSanPham> lsProducts = ViewBag.SanPham;
 }
 
 
@@ -24,23 +24,23 @@
                 <div class="col-lg-3 col-md-3">
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item">
-                            <a href="~/images/products/@Model.Thumb" class="single-img gallery-popup">
-                                <img class="img-full" src="~/images/products/@Model.Thumb" alt="@Model.Title">
+                            <a href="~/images/products/@Model.SHinhAnh" class="single-img gallery-popup">
+                                <img class="img-full" src="~/images/products/@Model.SHinhAnh" alt="@Model.SMoTa">
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">
-                                <img class="img-full" src="~/images/products/@Model.Thumb" alt="@Model.Title">
+                                <img class="img-full" src="~/images/products/@Model.SHinhAnh" alt="@Model.SMoTa">
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
-                                <img class="img-full" src="~/images/products/@Model.Thumb" alt="@Model.Title">
+                                <img class="img-full" src="~/images/products/@Model.SHinhAnh" alt="@Model.SMoTa">
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab">
-                                <img class="img-full" src="~/images/products/@Model.Thumb" alt="@Model.Title">
+                                <img class="img-full" src="~/images/products/@Model.SHinhAnh" alt="@Model.SMoTa">
                             </a>
                         </li>
                     </ul>
@@ -49,22 +49,22 @@
                     <div class="tab-content">
                         <div class="tab-pane active" id="tabs-1" role="tabpanel">
                             <div class="product__details__pic__item">
-                                <img class="img-full" src="~/images/products/@Model.Thumb" alt="@Model.Title">
+                                <img class="img-full" src="~/images/products/@Model.SHinhAnh" alt="@Model.SMoTa">
                             </div>
                         </div>
                         <div class="tab-pane" id="tabs-2" role="tabpanel">
                             <div class="product__details__pic__item">
-                                <img class="img-full" src="~/images/products/@Model.Thumb" alt="@Model.Title">
+                                <img class="img-full" src="~/images/products/@Model.SHinhAnh" alt="@Model.SMoTa">
                             </div>
                         </div>
                         <div class="tab-pane" id="tabs-3" role="tabpanel">
                             <div class="product__details__pic__item">
-                                <img class="img-full" src="~/images/products/@Model.Thumb" alt="@Model.Title">
+                                <img class="img-full" src="~/images/products/@Model.SHinhAnh" alt="@Model.SMoTa">
                             </div>
                         </div>
                         <div class="tab-pane" id="tabs-4" role="tabpanel">
                             <div class="product__details__pic__item">
-                                <img class="img-full" src="~/images/products/@Model.Thumb" alt="@Model.Title">
+                                <img class="img-full" src="~/images/products/@Model.SHinhAnh" alt="@Model.SMoTa">
                             </div>
                         </div>
                     </div>
@@ -77,7 +77,7 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-8">
                     <div class="product__details__text">
-                        <h4>@Model.ProductName</h4>
+                        <h4>@Model.STenSanPham</h4>
                         <div class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -86,9 +86,9 @@
                             <i class="fa fa-star-o"></i>
                             <span> - 5 Reviews</span>
                         </div>
-                        <h4><span>@Model.Price.Value.ToString("#,##0") VNĐ</span></h4>
+                        <h4><span>@Model.FGiaTien.Value.ToString("#,##0") VNĐ</span></h4>
                         <p>
-                            @Model.Description
+                            @Model.SMoTaChiTiet
                         </p>
                         <div class="product__details__option">
                          
@@ -101,7 +101,7 @@
                             </div>
                             <div class="add-to-cart mt-3">
                                 <a href="javascript:void(0)" class="primary-btn">Thêm vào giỏ hàng</a>
-                                <input hidden asp-for="ProductId" />
+                                <input hidden asp-for="IdSanPham" />
                             </div>
                         </div>
                         <div class="product__details__btns__option">
@@ -111,8 +111,8 @@
                             <h5><span>Đảm bảo thanh toán an toàn  </span></h5>
                             <img src="img/shop-details/details-payment.png" alt="">
                             <ul>
-                                <li><span>Categories:</span> @Model.Cat.CatName</li>
-                                <li><span>Tag:</span> @Model.Tags</li>
+                                <li><span>Categories:</span> @Model.IdDanhMucNavigation.STenDanhMuc</li>
+                                
                             </ul>
                         </div>
                     </div>
@@ -125,7 +125,7 @@
                             <li class="nav-item">
                                 <a class="nav-link active" data-toggle="tab" href="#tabs-5"
                                    role="tab">Mô tả</a>
-                                <h4>@Model.Description</h4>
+                                <h4>@Model.SMoTaChiTiet</h4>
                             </li>
                                                
                         </ul>

@@ -1,4 +1,4 @@
-﻿@model PaginatedList<WebShop.Models.Product>
+﻿@model PaginatedList<PKX_DATN.Models.TblSanPham>
 
 
 
@@ -46,15 +46,14 @@
                                         <div class="card-body">
                                             <div class="shop__sidebar__categories">
                                                 <ul class="nice-scroll">
-                        <li><a href="https://localhost:44391/1036">Đèn trợ sáng </a></li>
-                        <li><a href="https://localhost:44391/1037">Mạch đèn </a></li>
-                        <li><a href="https://localhost:44391/1038">Khóa chống trộm </a></li>
-                        <li><a href="https://localhost:44391/1039">Combo tiết kiệm </a></li>
-                        <li><a href="https://localhost:44391/1040">Đồ chơi xe máy </a></li>
-                        <li><a href="https://localhost:44391/1041">Phụ kiện phượt</a></li>
-                        <li><a href="https://localhost:44391/1042">Đồ đi mưa </a></li>
-                        @* <li><a href="https://localhost:44391/Qu%E1%BA%A7n%20Jeans">Quần Jeans </a></li>
-                        <li><a href="https://localhost:44391/Gi%C3%A0y%20d%C3%A9p">GIày dép </a></li> *@
+                 @*        <li><a href="https://localhost:44391/1">Đèn trợ sáng </a></li>
+                        <li><a href="https://localhost:44391/2">Mạch đèn </a></li>
+                        <li><a href="https://localhost:44391/3">Khóa chống trộm </a></li>
+                        <li><a href="https://localhost:44391/4">Combo tiết kiệm </a></li>
+                        <li><a href="https://localhost:44391/5">Đồ chơi xe máy </a></li>
+                        <li><a href="https://localhost:44391/6">Phụ kiện phượt</a></li>
+                        <li><a href="https://localhost:44391/7">Đồ đi mưa </a></li> *@
+                       
                                                 </ul>
                                             </div>
                                         </div>
@@ -118,17 +117,17 @@
                         {
                             foreach (var item in Model)
                             {
-                                string url = $"/{item.Alias}-{item.ProductId}.html";
+                                string url = $"/ABCD";
                                 <div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="product__item">
                                         <div class="product__item__pic set-bg">
                                             <a href="@url">
-                                                <img src="~/images/products/@item.Thumb" alt="@item.Title">
+                                                <img src="~/images/products/@item.SHinhAnh" alt="@item.SMoTa">
                                             </a>
                                         
                                         </div>
                                         <div class="product__item__text">
-                                            <h6>@item.ProductName</h6>
+                                            <h6>@item.STenSanPham</h6>
                                             @*  <a href="javascript:void(0)" class="add-to-cart">+ Add To Cart</a>*@
                                             <div class="rating">
                                                 <i class="fa fa-star-o"></i>
@@ -137,7 +136,7 @@
                                                 <i class="fa fa-star-o"></i>
                                                 <i class="fa fa-star-o"></i>
                                             </div>
-                                            <h5><span class="new-price">@item.Price.Value.ToString("#,##0") VNĐ</span></h5>
+                                            <h5><span class="new-price">@item.FGiaTien.Value.ToString("#,##0") VNĐ</span></h5>
                                             <div class="product__color__select">
                                                 <label for="pc-4">
                                                     <input type="radio" id="pc-4">

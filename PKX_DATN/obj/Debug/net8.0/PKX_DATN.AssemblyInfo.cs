@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PKX_DATN")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d0b194b315889c16bdc7cc17af21a61468ca0b66")]
 [assembly: System.Reflection.AssemblyProductAttribute("PKX_DATN")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PKX_DATN")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
