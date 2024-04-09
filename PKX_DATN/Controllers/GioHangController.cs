@@ -9,17 +9,16 @@ using System.Threading.Tasks;
 using PKX_DATN.Extension;
 using PKX_DATN.Models;
 using PKX_DATN.ModelViews;
-using Microsoft.AspNetCore.Http;
 
 namespace PKX_DATN.Controllers
 {
-    public class GioHangController : Controller
+    public class ShoppingCartController : Controller
     {
         private readonly WebPkxContext _context;
         public INotyfService _notyfService { get; }
 
 
-        public GioHangController(WebPkxContext context, INotyfService notyfService)
+        public ShoppingCartController(WebPkxContext context, INotyfService notyfService)
         {
             _context = context;
             _notyfService = notyfService;
@@ -40,13 +39,13 @@ namespace PKX_DATN.Controllers
 
         [HttpPost]
         [Route("api/cart/add")]
-        public IActionResult AddToCart(int IdSanPham, int? amount)
+        public IActionResult AddToCart(int productID, int? amount)
         {
             List<SanPhamGioHang> gioHang = GioHang;
             try
             {
                 //them sp vao gio hang
-                SanPhamGioHang item = GioHang.SingleOrDefault(p => p.SanPham.IdSanPham == IdSanPham);
+                SanPhamGioHang item = GioHang.SingleOrDefault(p => p.SanPham.IdSanPham == productID);
                 if (item != null)//da co --> capnhat so luong
                 {
                     if (amount.HasValue)
@@ -61,7 +60,7 @@ namespace PKX_DATN.Controllers
                 }
                 else
                 {
-                    TblSanPham hh = _context.TblSanPhams.SingleOrDefault(p => p.IdSanPham == IdSanPham);
+                    TblSanPham hh = _context.TblSanPhams.SingleOrDefault(p => p.IdSanPham == productID);
                     item = new SanPhamGioHang
                     {
                         amount = amount.HasValue ? amount.Value : 1,
@@ -82,24 +81,24 @@ namespace PKX_DATN.Controllers
 
         [HttpPost]
         [Route("api/cart/update")]
-        public IActionResult UpdateCart(int IdSanPham, int? amount)
+        public IActionResult UpdateCart(int productId, int? amount)
         {
-            var gioHang = HttpContext.Session.Get<List<SanPhamGioHang>>("GioHang") ?? new List<SanPhamGioHang>();
+            var cart = HttpContext.Session.Get<List<SanPhamGioHang>>("GioHang") ?? new List<SanPhamGioHang>();
 
-            var itemToUpdate = gioHang.SingleOrDefault(item => item.SanPham.IdSanPham == IdSanPham);
+            SanPhamGioHang itemToUpdate = cart.SingleOrDefault(item => item.SanPham.IdSanPham == productId);
             if (itemToUpdate != null)
             {
                 if (itemToUpdate != null && amount.HasValue)
                 {
                     if (amount == 0)
                     {
-                        gioHang.Remove(itemToUpdate);
+                        cart.Remove(itemToUpdate);
                     }
                     itemToUpdate.amount = amount.Value;
                 }
             }
 
-            HttpContext.Session.Set<List<SanPhamGioHang>>("GioHang", gioHang);
+            HttpContext.Session.Set<List<SanPhamGioHang>>("GioHang", cart);
 
             return Json(new { success = true });
         }
@@ -107,19 +106,19 @@ namespace PKX_DATN.Controllers
 
         [HttpPost]
         [Route("api/cart/remove")]
-        public ActionResult Remove(int IdSanPham)
+        public ActionResult Remove(int productID)
         {
             try
             {
-                var gioHang = HttpContext.Session.Get<List<SanPhamGioHang>>("GioHang") ?? new List<SanPhamGioHang>();
+                var cart = HttpContext.Session.Get<List<SanPhamGioHang>>("GioHang") ?? new List<SanPhamGioHang>();
 
-                var itemToUpdate = gioHang.SingleOrDefault(item => item.SanPham.IdSanPham == IdSanPham);
+                var itemToUpdate = cart.SingleOrDefault(item => item.SanPham.IdSanPham == productID);
                 if (itemToUpdate != null)
                 {
-                    gioHang.Remove(itemToUpdate);
+                    cart.Remove(itemToUpdate);
                 }
                 // luu lai session
-                HttpContext.Session.Set<List<SanPhamGioHang>>("GioHang", gioHang);
+                HttpContext.Session.Set<List<SanPhamGioHang>>("GioHang", cart);
                 return Json(new { success = true });
             }
             catch

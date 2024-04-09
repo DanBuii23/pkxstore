@@ -3,8 +3,8 @@
 @model PagedList.Core.IPagedList<PKX_DATN.Models.TblSanPham>
 
 @{
-    TblDanhMuc danhMuc = ViewBag.CurrentCat;
-    ViewData["Title"] = danhMuc.SMoTa + " " + ViewBag.CurrentPage;
+    TblDanhMuc category = ViewBag.CurrentCat;
+    ViewData["Title"] = category.STenDanhMuc + " " + ViewBag.CurrentPage;
     Layout = "~/Views/Shared/_Layout.cshtml";
     int PageCurrent = ViewBag.CurrentPage;
 
@@ -57,7 +57,8 @@
                             <li><a href="https://localhost:44391/1040">Đồ chơi xe máy </a></li>
                             <li><a href="https://localhost:44391/1041">Phụ kiện phượt</a></li>
                             <li><a href="https://localhost:44391/1042">Đồ đi mưa </a></li>
-                           
+                            @* <li><a href="https://localhost:44391/Qu%E1%BA%A7n%20Jeans">Quần Jeans </a></li>
+                            <li><a href="https://localhost:44391/Gi%C3%A0y%20d%C3%A9p">GIày dép </a></li> *@
                         </ul>
                         </div>
                         </div>
@@ -127,7 +128,7 @@
                                     <div class="product__item">
                                         <div class="product__item__pic set-bg">
                                             <a href="@url">
-                                                <img src="~/images/products/@item.SHinhAnh" alt="@item.SMoTa">
+                                                <img src="~/images/products/@item.SHinhAnh" alt="@item.STenSanPham">
                                             </a>
                                       
                                         </div>

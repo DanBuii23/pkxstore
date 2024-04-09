@@ -11,11 +11,11 @@ using PKX_DATN.Models;
 
 namespace PKX_DATN.Controllers
 {
-    public class SanPhamController : Controller
+    public class ProductController : Controller
     {
         private readonly WebPkxContext _context;
 
-        public SanPhamController(WebPkxContext context)
+        public ProductController(WebPkxContext context)
         {
             _context = context;
         }
@@ -54,10 +54,10 @@ namespace PKX_DATN.Controllers
                 var danhmuc = _context.TblDanhMucs.AsNoTracking().SingleOrDefault(x => x.IdDanhMuc == CatID);
                 if (danhmuc != null)
                 {
-                    var ls = _context.TblSanPhams.AsNoTracking()
+                    var lsTinTuc = _context.TblSanPhams.AsNoTracking()
                   .Where(x => x.IdDanhMuc == danhmuc.IdDanhMuc)
                   .OrderByDescending(x => x.DNgayTao);
-                    PagedList<TblSanPham> models = new PagedList<TblSanPham>(ls, page, pageSize);
+                    PagedList<TblSanPham> models = new PagedList<TblSanPham>(lsTinTuc, page, pageSize);
                     ViewBag.CurrentPage = page;
                     ViewBag.CurrentCat = danhmuc;
                     return View(models);
@@ -75,12 +75,12 @@ namespace PKX_DATN.Controllers
         }
 
 
-        [Route("/{id}.html", Name = "ProductDetails")]
+        [Route("/{Alias}-{id}.html", Name = "ProductDetails")]
         public IActionResult Details(int id)
         {
             try
             {
-                var product = _context.TblSanPhams.Include(x => x.IdDanhMuc).FirstOrDefault(x => x.IdSanPham == id);
+                var product = _context.TblSanPhams.Include(x => x.IdDanhMucNavigation).FirstOrDefault(x => x.IdSanPham == id);
                 if (product == null)
                 {
                     return RedirectToAction("Index");

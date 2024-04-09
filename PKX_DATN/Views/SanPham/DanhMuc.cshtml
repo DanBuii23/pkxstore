@@ -15,7 +15,7 @@
                                     <div class="product-tab-icon">
                                         <img src="~/assets/images/product/icon/2.png" alt="@item.IdDanhMucNavigation.STenDanhMuc">
                                     </div>
-                                    <a href="/Home/DanhMuc?CatID=1">
+                                    <a href="/Home/DanhMuc?CatID=@item.IdDanhMucNavigation.IdDanhMuc">
                                         @item.IdDanhMucNavigation.STenDanhMuc
                                     </a>
                                 </a>
@@ -38,7 +38,7 @@
                 <div class="product-item">
                     <div class="product-img img-zoom-effect">
                         <a href="@url">
-                            <img class="img-full" src="~/images/products/@item.SHinhAnh" alt="@item.SMoTa">
+                            <img class="img-full" src="~/images/products/@item.SHinhAnh" alt="@item.STenSanPham">
                         </a>
                         <div class="product-add-action">
                             <ul>
