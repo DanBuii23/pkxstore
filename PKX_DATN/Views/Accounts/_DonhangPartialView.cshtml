@@ -127,7 +127,9 @@ else
                         tr += '<td>' + item.trangThai + '</td>';
                         tr += '<td>' + Intl.NumberFormat('vi-VN').format(item.tongTien)+ ' VND</td>';
                         tr += '<td><a class="account-order-id btn btn-primary btn-tone m-r-5" data-order-id="' + item.maDon + '"><i class="far fa-eye m-r-5 fa-lg text-white"></i><span class="text-white">Xem</span></a></td>';
-                        tr += '<td><a class="huy-order-id btn btn-danger btn-tone m-r-5" data-order-id="' + item.maDon + '"><i class="far fa-trash-alt m-r-5 fa-lg"></i>Huỷ</a></td>';
+                        if (item.trangThai == "Chờ lấy hàng") {
+                            tr += '<td><a class="huy-order-id btn btn-danger btn-tone m-r-5" data-order-id="' + item.maDon + '"><i class="far fa-trash-alt m-r-5 fa-lg"></i>Huỷ</a></td>';
+                        }
                         tr += '</tr>';
                     });
                     $('#ds__cart').append(tr);
