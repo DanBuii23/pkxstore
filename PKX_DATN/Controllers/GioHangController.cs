@@ -85,6 +85,8 @@ namespace PKX_DATN.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("api/cart/update")]
         public IActionResult UpdateCart(int productId, int? amount)
         {
             var cart = HttpContext.Session.Get<List<SanPhamGioHang>>("GioHang") ?? new List<SanPhamGioHang>();
