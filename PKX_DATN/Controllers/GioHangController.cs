@@ -46,10 +46,11 @@ namespace PKX_DATN.Controllers
         [Route("/api/cart/add")]
         public IActionResult AddToCart(int productID, int? amount)
         {
-            if (!User.Identity.IsAuthenticated)
+            var AccountID = HttpContext.Session.GetString("CustomerId");
+            if (AccountID == null)
             {
                 // Người dùng đã đăng nhập
-                return Json(new { success = false, message="Bạn chưa đăng nhập" }) ; ;
+                return Json(new { success = false, message = "Bạn chưa đăng nhập" });
             }
             List<SanPhamGioHang> gioHang = GioHang;
             try
@@ -135,6 +136,13 @@ namespace PKX_DATN.Controllers
         [Route("/cart.html", Name = "Cart")]
         public IActionResult Index()
         {
+            var AccountID = HttpContext.Session.GetString("CustomerId");
+            if (AccountID == null)
+            {
+                _notyfService.Warning("Bạn chưa đăng nhập!");
+                // Người dùng đã đăng nhập
+                return RedirectToAction("Login","Accounts");
+            }
             return View(GioHang);
         }
         [HttpGet]
