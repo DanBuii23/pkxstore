@@ -511,7 +511,7 @@ namespace WebAdminPKX.Controllers
                 .Include(x => x.IdKhachHangNavigation)
                 .FirstOrDefault(x => x.IdDonHang == id);
 
-            if(donhang.IdTrangThai!=2&& donhang.IdTrangThai != 3)
+            if(donhang.IdTrangThai!=2 && donhang.IdTrangThai!=3)
             {
                 _notyfService.Warning("Đơn hàng ở trạng thái đang giao hoặc hoàn thành");
                 return RedirectToAction(nameof(Index));
@@ -523,7 +523,7 @@ namespace WebAdminPKX.Controllers
             var stt = 1;
             
             var html = "<div style='text-align:center;padding: 20px 0px 100px 0px;border: 1px solid #ccc'>";
-            html += "<img style='width:30px' src='D:\\asp.net\\PhuKienXe\\pkxstore\\WebAdminPKX\\wwwroot\\images\\pages\\phukienxe.jpg' alt='Logo' class='logo' />";
+            html += "<img style='width:30px' src='D:\\Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024\\fixed\\pkxstore\\WebAdminPKX\\wwwroot\\assets\\images\\logo\\z5297720385657_5138fcf646f04bd09c7ee25945614dd4.jpg' alt='Logo' class='logo' />";
             html += "<h2>HOÁ ĐƠN</h1>";
             html += "<h4>Thời gian: "+ DateTime.Now +"</h1>";
             html += "<div style='width:100%;border: 1px solid #ccc;'>";

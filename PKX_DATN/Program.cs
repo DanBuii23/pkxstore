@@ -22,7 +22,7 @@ builder.Services.AddAuthentication("UserCookie")
 {
     options.Cookie.Name = "UserCookie";
     options.ExpireTimeSpan = TimeSpan.FromMinutes(15);
-    options.SlidingExpiration = true;
+    options.SlidingExpiration = false;
     options.AccessDeniedPath = "/Forbidden/";
     options.LoginPath = "/Accounts/Login"; // set the login path for users
 });
@@ -41,6 +41,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
 app.UseAuthentication();
 app.UseAuthorization();
 

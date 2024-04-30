@@ -2,22 +2,12 @@
 <div class="offcanvas-menu-overlay"></div>
 <div class="offcanvas-menu-wrapper">
     <div class="offcanvas__option">
-        <div class="offcanvas__links">
-            @if (User.Identity.IsAuthenticated)
-            {
-                <h5>Welcome,<a href="/Accounts/Dashboard">@User.Identity.Name</a></h5>
-            }
-            else
-            {
-                <a href="/Accounts/Login">Đăng nhập</a>
-                <a href="/dang-ky.html">Đăng ký</a>
-            }
-
+        <div class="offcanvas__links" id="taikhoan__div__responsive">
         </div>
     </div>
     <div class="offcanvas__nav__option">
-         <a href="/cart.html"><img src="~/assets/img/icon/cart.png" /> <span>@await Component.InvokeAsync("NumberCart")</span></a>
- @**@        <div class="price">$0.00</div>
+        <a href="/cart.html"><img src="~/assets/img/icon/cart.png" /> <span>@await Component.InvokeAsync("NumberCart")</span></a>
+        @**@        <div class="price">$0.00</div>
     </div>
     <div id="mobile-menu-wrap"></div>
     <div class="offcanvas__text">
@@ -38,19 +28,9 @@
                 </div>
                 <div class="col-lg-6 col-md-5">
                     <div class="header__top__right">
-                        <div class="header__top__links">
-                            @if (User.Identity.IsAuthenticated)
-                            {
-                                <h5>Welcome,<a href="/Accounts/Dashboard">@User.Identity.Name</a></h5>
-                            }
-                            else
-                            {
-                                <a href="/Accounts/Login">Đăng nhập</a>
-                                <a href="/dang-ky.html">Đăng ký</a>
-                            }
-
+                        <div class="header__top__links" id="taikhoan__div">
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -91,3 +71,32 @@
     </div>
 </header>
 <!-- Header Section End -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        console.log("ready to check login");
+        $.get('/Accounts/CheckLogin', function (response) {
+            // 'response' chứa dữ liệu trả về từ hàm CheckLogin()
+            console.log("res" + response.code); // In kết quả ra console
+            $("#taikhoan__div").empty();
+            // Kiểm tra xem người dùng đã xác thực hay chưa
+            if (response.code == 200) {
+                console.log('User is authenticated');
+                // Bạn có thể thực hiện các hành động khác tại đây
+                var html = "";
+                html += `<h5><a href="/Accounts/Dashboard">Welcome, ${response.check}</a></h5>`;
+                $("#taikhoan__div").append(html);
+
+            } else {
+                console.log('User is not authenticated');
+                // Bạn có thể thực hiện các hành động khác tại đây
+                var html = "";
+                html += `<a href="/Accounts/Login">Đăng nhập</a>`;
+                html += `<a href="/dang-ky.html">Đăng ký</a>`;
+                $("#taikhoan__div").append(html);
+            }
+        });
+    });
+
+</script>

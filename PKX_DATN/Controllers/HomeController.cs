@@ -27,6 +27,8 @@ namespace PKX_DATN.Controllers
             _notifyService = notyf;
         }
 
+        [Route("/index.html")]
+        [Route("/")]
         public IActionResult Index(int? page, string searchString, string currentFilter, int? pageNumber)
         {
             HomeViewVM model = new HomeViewVM();

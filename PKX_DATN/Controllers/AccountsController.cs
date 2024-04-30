@@ -31,6 +31,18 @@ namespace PKX_DATN.Controllers
         {
             return Content("Index");
         }
+        public JsonResult CheckLogin()
+        {
+            var AccountID = HttpContext.Session.GetString("CustomerId");
+            if (AccountID!=null)
+            {
+                var username = _context.TblKhachHangs.FirstOrDefault(p=>p.IdKhachHang==Int32.Parse(AccountID)).STenKhachHang;
+                
+                return Json(new { code = 200, check = username, msg = "Check success" });
+            }
+            return Json(new { code = 501, msg = "Check success" });
+
+        }
         [HttpGet]
         [AllowAnonymous]
         public IActionResult ValidatePhone(string Phone)
@@ -70,14 +82,14 @@ namespace PKX_DATN.Controllers
         {
             try
             {
-                var tblDonHang = _context.TblDonHangs.Find(id);
+                var tblDonHang = _context.TblDonHangs.AsNoTracking().FirstOrDefault(i=>i.IdDonHang==id);
                 if (tblDonHang != null)
                 {
                     tblDonHang.IdTrangThai = 4;
                     _context.TblDonHangs.Update(tblDonHang);
                 }
 
-                _context.SaveChangesAsync();
+                _context.SaveChanges();
 
                 return Json(new { code = 200, msg = "Huỷ thành công đơn hàng" });
 
@@ -99,7 +111,7 @@ namespace PKX_DATN.Controllers
             {
                 var tcn = _context.TblDonHangs
                 .Where(t => t.IdKhachHang == Int32.Parse(AccountID))
-                .OrderBy(t=>t.IdTrangThai)
+                .OrderByDescending(t=>t.DNgayTao)
                 .Select(t => new
                 {
                     maDon = t.IdDonHang,
