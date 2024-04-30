@@ -47,6 +47,12 @@ namespace PKX_DATN.Controllers
         {
             //lay gio hang ra de xu ly
             var cart = HttpContext.Session.Get<List<SanPhamGioHang>>("GioHang");
+            if(cart == null || cart.Count == 0)
+            {
+                _notyfService.Warning("Không có sản phẩm trong giỏ hàng!");
+                // Người dùng đã đăng nhập
+                return RedirectToAction("Index", "GioHang");
+            }
             var taikhoanID = HttpContext.Session.GetString("CustomerId");
             MuaHangVM model = new MuaHangVM();
             if (taikhoanID != null)
