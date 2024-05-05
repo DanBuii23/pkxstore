@@ -131,7 +131,7 @@ namespace PKX_DATN.Controllers
 
 
 
-        [AllowAnonymous]
+        [Authorize]
         public IActionResult Dashboard()
         {
             //var cart = HttpContext.Session.Get<List<CartItem>>("GioHang");

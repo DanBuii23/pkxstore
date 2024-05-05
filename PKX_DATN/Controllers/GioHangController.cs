@@ -101,7 +101,7 @@ namespace PKX_DATN.Controllers
                     {
                         cart.Remove(itemToUpdate);
                     }
-                    itemToUpdate.amount += amount.Value;
+                    itemToUpdate.amount = amount.Value;
                 }
             }
 

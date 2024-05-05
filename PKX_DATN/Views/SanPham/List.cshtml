@@ -39,7 +39,6 @@
                 <div class="col-lg-3">
                     <div class="shop__sidebar">
                         <div class="shop__sidebar__search">
-
                         </div>
                         <div class="shop__sidebar__accordion">
                             <div class="accordion" id="accordionExample">
@@ -60,9 +59,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                
-
-
                             </div>
                         </div>
                     </div>
@@ -75,14 +71,14 @@
                                     <p>Showing Results</p>
                                 </div>
                             </div>
-@*                            <div class="col-lg-6 col-md-6 col-sm-6">
-                                <div class="shop__product__option__right">
-                                    <p>Sort by Price:</p>
-                                    <select>
-                                        <option value="">Low To High</option>
-                                        <option value="">High To Low</option>
-                                    </select>
-                                </div>
+                            @*                            <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="shop__product__option__right">
+                            <p>Sort by Price:</p>
+                            <select>
+                            <option value="">Low To High</option>
+                            <option value="">High To Low</option>
+                            </select>
+                            </div>
                             </div>*@
                         </div>
                     </div>
@@ -91,7 +87,7 @@
                         {
                             foreach (var item in Model)
                             {
-                                string url = $"/{item.Alias}-{item.IdSanPham}.html";
+                                string url = $"/{item.IdSanPham}.html";
                                 <div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="product__item">
                                         <div class="product__item__pic set-bg">
@@ -103,15 +99,15 @@
                                         <div class="product__item__text">
                                             <h6>@item.STenSanPham</h6>
                                             @*  <a href="javascript:void(0)" class="add-to-cart">+ Add To Cart</a>*@
-                                            <div class="rating">
+                                            @* <div class="rating">
                                                 <i class="fa fa-star-o"></i>
                                                 <i class="fa fa-star-o"></i>
                                                 <i class="fa fa-star-o"></i>
                                                 <i class="fa fa-star-o"></i>
                                                 <i class="fa fa-star-o"></i>
-                                            </div>
+                                            </div> *@
                                             <h5><span class="new-price">@item.FGiaTien.Value.ToString("#,##0") VNĐ</span></h5>
-                                            <div class="product__color__select">
+                                            @* <div class="product__color__select">
                                                 <label for="pc-4">
                                                     <input type="radio" id="pc-4">
                                                 </label>
@@ -121,7 +117,7 @@
                                                 <label class="grey" for="pc-6">
                                                     <input type="radio" id="pc-6">
                                                 </label>
-                                            </div>
+                                            </div> *@
                                         </div>
                                     </div>
                                 </div>
@@ -142,7 +138,7 @@
 
 
 <!-- Main Content Area End Here -->
-@section Scripts{
+@section Scripts {
     <script>
         $(document).ready(function () {
             $(function () {

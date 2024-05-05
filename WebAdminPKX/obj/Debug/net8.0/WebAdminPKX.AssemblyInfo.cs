@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebAdminPKX")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7b6c3fee2fda6608613e34b7d1ca036c78c479cd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0cf9e2b018a62eb3669e0f8ffdc42e617e6a5bf1")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebAdminPKX")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebAdminPKX")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\asp.net\\PhuKienXe\\pkxstore\\Domain\\Domain.csproj": {}
+    "D:\\Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024\\Final\\pkxstore\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "D:\\asp.net\\PhuKienXe\\pkxstore\\Domain\\Domain.csproj": {
+    "D:\\Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024\\Final\\pkxstore\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\asp.net\\PhuKienXe\\pkxstore\\Domain\\Domain.csproj",
+        "projectUniqueName": "D:\\Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024\\Final\\pkxstore\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "D:\\asp.net\\PhuKienXe\\pkxstore\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "D:\\asp.net\\PhuKienXe\\pkxstore\\Domain\\obj\\",
+        "projectPath": "D:\\Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024\\Final\\pkxstore\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\danbu\\.nuget\\packages\\",
+        "outputPath": "D:\\Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024\\Final\\pkxstore\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\danbu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

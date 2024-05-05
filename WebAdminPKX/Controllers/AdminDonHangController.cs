@@ -52,7 +52,7 @@ namespace WebAdminPKX.Controllers
             var pageNumber = page == null || page <= 0 ? 1 : page.Value;
             var pageSize = 20;
             var donHangs = _context.TblDonHangs.Include(t => t.IdKhachHangNavigation).Include(t => t.IdTrangThaiNavigation)
-                .AsNoTracking().OrderBy(t => t.IdTrangThai);
+                .AsNoTracking().OrderByDescending(t => t.DNgayTao);
             if (status != null)
             {
                 donHangs = donHangs.Where(t => t.IdTrangThai == status)
@@ -95,7 +95,7 @@ namespace WebAdminPKX.Controllers
             try
             {
                 var tcn = _context.TblDonHangs
-                .OrderBy(t => t.IdTrangThai)
+                .OrderByDescending(t => t.DNgayTao)
                 .Select(t => new
                 {
                     maDon = t.IdDonHang,

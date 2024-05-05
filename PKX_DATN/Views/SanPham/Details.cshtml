@@ -63,14 +63,14 @@
                             <div class="col-lg-8">
                                 <div class="product__details__text">
                                     <h4>@Model.STenSanPham</h4>
-                                    <div class="rating">
+                                    @* <div class="rating">
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star-o"></i>
                                         <span> - 5 Reviews</span>
-                                    </div>
+                                    </div> *@
                                     <h4><span>@Model.FGiaTien.Value.ToString("#,##0") VNĐ</span></h4>
                                     <p>
                                         @Model.SMoTa
@@ -96,8 +96,8 @@
                                         <h5><span>Đảm bảo thanh toán an toàn  </span></h5>
                                         <img src="img/shop-details/details-payment.png" alt="">
                                         <ul>
-                                            <li><span>Categories:</span> @Model.IdDanhMucNavigation.STenDanhMuc</li>
-                                            <li><span>Tag:</span> </li>
+                                            <li><span>Danh mục:</span> @Model.IdDanhMucNavigation.STenDanhMuc</li>
+                                            @* <li><span>Tag:</span> </li> *@
                                         </ul>
                                     </div>
                                 </div>
@@ -106,14 +106,14 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="product__details__tab">
-                                    <ul class="nav nav-tabs" role="tablist">
+                                    @* <ul class="nav nav-tabs" role="tablist">
                                         <li class="nav-item">
                                             <a class="nav-link active" data-toggle="tab" href="#tabs-5"
                                                role="tab">Mô tả</a>
                                             <h4>@Model.SMoTa</h4>
                                         </li>
 
-                                    </ul>
+                                    </ul> *@
                                 </div>
                             </div>
                         </div>

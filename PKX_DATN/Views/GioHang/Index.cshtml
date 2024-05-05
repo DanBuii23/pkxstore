@@ -59,7 +59,8 @@
                                                 <td class="quantity__item">
                                                     <div class="quantity">
                                                         <div class="">
-                                                            <input class="cartQuantity cartItem" data-mahh="@item.SanPham.IdSanPham" data-dongia="@item.SanPham.FGiaTien" value="@item.amount" min="1" max="@item.SanPham.ISoLuongTonKho" type="number" onchange="updatePrice(this)">
+                                                            <input class="cartQuantity cartItem" data-mahh="@item.SanPham.IdSanPham" data-dongia="@item.SanPham.FGiaTien" 
+                                                            value="@item.amount" min="1" max="@item.SanPham.ISoLuongTonKho" type="number" onchange="updatePrice(this)">
                                                         </div>
                                                     </div>
                                                 </td>
@@ -106,7 +107,7 @@
     </section>
     <!-- Shopping Cart Section End -->
 </main>
-@section Scripts{
+@section Scripts {
     <script>
         $(function () {
             function loadHeaderCart() {
@@ -124,7 +125,7 @@
                         if (result.success) {
                             loadHeaderCart();//load lai gio
                             window.location = '/cart.html';
-                            alert("Xóa sản phâm thành công");
+                            alert("Xóa sản phẩm thành công");
 
                         }
                     },

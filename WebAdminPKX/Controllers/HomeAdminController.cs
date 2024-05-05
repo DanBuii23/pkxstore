@@ -32,7 +32,7 @@ namespace WebAdminPKX.Controllers
             var tongSP = _context.TblChiTietDonHangs.Sum(ctdh => ctdh.ISoLuong);
             ViewBag.TongSP = tongSP;
 
-            ViewBag.ChiTieu = 20;
+            ViewBag.ChiTieu = null;
             return View();
         }
 

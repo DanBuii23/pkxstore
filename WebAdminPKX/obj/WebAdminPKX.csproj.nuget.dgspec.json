@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\asp.net\\PhuKienXe\\pkxstore\\WebAdminPKX\\WebAdminPKX.csproj": {}
+    "D:\\Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024\\Final\\pkxstore\\WebAdminPKX\\WebAdminPKX.csproj": {}
   },
   "projects": {
-    "D:\\asp.net\\PhuKienXe\\pkxstore\\Domain\\Domain.csproj": {
+    "D:\\Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024\\Final\\pkxstore\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\asp.net\\PhuKienXe\\pkxstore\\Domain\\Domain.csproj",
+        "projectUniqueName": "D:\\Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024\\Final\\pkxstore\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "D:\\asp.net\\PhuKienXe\\pkxstore\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "D:\\asp.net\\PhuKienXe\\pkxstore\\Domain\\obj\\",
+        "projectPath": "D:\\Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024\\Final\\pkxstore\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\danbu\\.nuget\\packages\\",
+        "outputPath": "D:\\Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024\\Final\\pkxstore\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\danbu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -87,17 +87,17 @@
         }
       }
     },
-    "D:\\asp.net\\PhuKienXe\\pkxstore\\WebAdminPKX\\WebAdminPKX.csproj": {
+    "D:\\Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024\\Final\\pkxstore\\WebAdminPKX\\WebAdminPKX.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\asp.net\\PhuKienXe\\pkxstore\\WebAdminPKX\\WebAdminPKX.csproj",
+        "projectUniqueName": "D:\\Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024\\Final\\pkxstore\\WebAdminPKX\\WebAdminPKX.csproj",
         "projectName": "WebAdminPKX",
-        "projectPath": "D:\\asp.net\\PhuKienXe\\pkxstore\\WebAdminPKX\\WebAdminPKX.csproj",
-        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "D:\\asp.net\\PhuKienXe\\pkxstore\\WebAdminPKX\\obj\\",
+        "projectPath": "D:\\Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024\\Final\\pkxstore\\WebAdminPKX\\WebAdminPKX.csproj",
+        "packagesPath": "C:\\Users\\danbu\\.nuget\\packages\\",
+        "outputPath": "D:\\Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024\\Final\\pkxstore\\WebAdminPKX\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\danbu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -111,8 +111,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\asp.net\\PhuKienXe\\pkxstore\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\asp.net\\PhuKienXe\\pkxstore\\Domain\\Domain.csproj"
+              "D:\\Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024\\Final\\pkxstore\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\Đồ Án Tốt Nghiệp - PhuKienXe - HK2.2024\\Final\\pkxstore\\Domain\\Domain.csproj"
               }
             }
           }
